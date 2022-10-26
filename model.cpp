@@ -1,105 +1,57 @@
-// thanh tuyen
-// dev c
-// sua tiep
-// ---------include thu vien -------------
-// Node User
-// Node Rut Tien
-// Node Chuyen Tien
-struct NodeUser {
-    NodeUser *next;
-    user us;
-};
-
-struct RutTien
-{
-    string thoiGian;
-    int soTienGiaoDich;
-};
-
-struct ChuyenTien
-{
-    user sr;
-    user dest;
-    string thoiGian;
-    int soTienGiaoDich;
-};
-
-
-
-struct user
-{
-    string id; // duy nhat
-    string PIN;    
-    string hoten;
-    int sodu; 
-    string sdt; // duy nhat
-    bool isActive = true; // tai khoan con hoat dong hay ko.   
-    ListRutTien;// linked list
-    ListChuyenTien; // linked list
-};
-
-
-struct NodeLishSu
-{
-    NodeLishSu *next;
-    LichSu ls;
-};
-
-
-
-
-struct listLichSuGiaoDich 
-{
-    Node *head;
-    Node *tail;
-};
-
-
-struct listUser {
-    Node *head;
-    Node *tail;
+// tim hieu cach bam qua lai 
+struct Node {
+    string url;
+    Node*next;
+    Node *prev;
 }
 
+struct listUrl {
+    Node *Head = createNode("myhomepage.com");
+    Node *Tail = null;
+}
+struct listBookMark {
+    Node *Head ; // khoi tao home page
+    Node *Tail;
+}
+
+Node *createNode(string url) {
+    Node * p  = new Node;
+    p->url = url;
+    p->prev = NULL;
+    p->next = NULL;
+}
+
+void clearHistory() {
+    void xemLichSu();
+}
 int main() {
-
+    listUrl listUrl;
+    //tao home page
+    header(listUrl.head, listUrl.head);
+    homePage();
 }
 
-void docFile(nguon.txt, candoc);
-void ghiFile(canghi, nguon.txt);
-
-bool xacNhanDangNhap(string id, string PIN)
-{
-    //false -> lam lai
-    //true -> menu();
+void veTrinhDuyet(Node *currentUrl) {
+    header(currentUrl);
+    content(currentUrl.url);
 }
 
+void header(Node*Head, Node *path) {
+    listBookMark;
+    Node *next = path->next;
+    Node *prev = path->prev;
+    Node *home = Head;
+    string url = path->url;
+    string search = "Nhap URL";
+    book isbookMark = false;
+    string option = "Tuy chon khac";
 
-void menu(user currentUser) {
-    // print ra thong tin user
-    void xemThongTin(user currentUser);
-    
+    //click next || prev || home -> veTrinhDuyet();
 
-    void rutTien(user currentUser) {
-        // hoi rut bao nhieu? -> option
-        int soTienGiaoDich;
-        cin >> soTienGiaoDich;
-        if(soTienGiaoDich > us.sodu) {
-            cout << "So du khong du!"; 
-            menu(currentUser); 
-            // neu so tien lon thi cho ra menu
-        }
-        else {
-            NodeLishSu *newLichSu = createNodeLichSu(lichSu); // xu ly ko co nguoi den
-            currentUser.sodu -= soTienGiaoDich;
-            currentUser.lichSuGiaoDich.addTail(newLichSu);
-        }
-
+    // click search --> {
+        Node currentURL = createNode(search);
+        addTail(listUrl, currentURL);
+        veTrinhDuyet(currentURL);
     }
-    void chuyenTien(user sr, user dest) {
 
-    }
-    void xemLichSuGiaoDich(user currentUser);
-    void doiMaPIN(user currentUser);
 }
-//hello? what your name
-
