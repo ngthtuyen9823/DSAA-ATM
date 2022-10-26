@@ -1,3 +1,5 @@
+// thanh tuyen
+// dev c
 // ---------include thu vien -------------
 // Node User
 // Node Rut Tien
@@ -93,7 +95,7 @@ void menu(user currentUser) {
 
     }
     void chuyenTien(user sr, user dest) {
-        
+
     }
     void xemLichSuGiaoDich(user currentUser);
     void doiMaPIN(user currentUser);
